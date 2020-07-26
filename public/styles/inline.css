@@ -107,33 +107,6 @@ body {
   text-decoration: none;
 }
 
-/**
- * Loading spinner
- */
-
-.card-spinner {
-  background-color: rgba(255, 255, 255, 0.8);
-  height: 100%;
-  margin-left: -16px;
-  margin-top: -16px;
-  position: absolute;
-  width: 100%;
-}
-
-.card-spinner svg {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card-spinner svg circle {
-  animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
-  box-sizing: border-box;
-  stroke: #3f51b5;
-  stroke-width: 3px;
-  transform-origin: 50%;
-}
 
 @keyframes rotate {
   from { transform: rotate(0); }
@@ -171,149 +144,6 @@ body {
   background-image: url("/images/add.svg");
 }
 
-/*
-  Openweather icons
-*/
-
-.icon.owm01d {
-  background-image: url("/images/ow/01d.png");
-}
-
-.icon.owm02d {
-  background-image: url("/images/ow/02d.png");
-}
-
-.icon.owm03d {
-  background-image: url("/images/ow/03d.png");
-}
-
-.icon.owm04d{
-  background-image: url("/images/ow/04d.png");
-}
-
-.icon.owm09d {
-  background-image: url("/images/ow/09d.png");
-}
-
-.icon.owm10d {
-  background-image: url("/images/ow/10d.png");
-}
-
-.icon.owm13d {
-  background-image: url("/images/ow/13d.png");
-}
-
-/* Notturne */
-
-.icon.owm01n {
-  background-image: url("/images/ow/01n.png");
-}
-
-.icon.owm02n {
-  background-image: url("/images/ow/02n.png");
-}
-
-.icon.owm03n {
-  background-image: url("/images/ow/03n.png");
-}
-
-.icon.owm04n{
-  background-image: url("/images/ow/04n.png");
-}
-
-.icon.owm09d {
-  background-image: url("/images/ow/09d.png");
-}
-
-.icon.owm09n {
-  background-image: url("/images/ow/09n.png");
-}
-
-.icon.owm10d {
-  background-image: url("/images/ow/10d.png");
-}
-
-.icon.owm10n {
-  background-image: url("/images/ow/10n.png");
-}
-
-.icon.owm11d {
-  background-image: url("/images/ow/11d.png");
-}
-
-.icon.owm11n {
-  background-image: url("/images/ow/11n.png");
-}
-
-.icon.owm13d{
-  background-image: url("/images/ow/13d.png");
-}
-
-.icon.owm13n{
-  background-image: url("/images/ow/13n.png");
-}
-
-.icon.owm50d{
-  background-image: url("/images/ow/50d.png");
-}
-
-.icon.owm50n{
-  background-image: url("/images/ow/50n.png");
-}
-
-/* -- */
-
-.icon.clear-day {
-  background-image: url("/images/clear-day.svg");
-}
-
-.icon.clear-night {
-  background-image: url("/images/clear-night.svg");
-}
-
-.icon.rain {
-  background-image: url("/images/rain.svg");
-}
-
-.icon.snow {
-  background-image: url("/images/snow.svg");
-}
-
-.icon.sleet {
-  background-image: url("/images/sleet.svg");
-}
-
-.icon.wind {
-  background-image: url("/images/wind.svg");
-}
-
-.icon.fog {
-  background-image: url("/images/fog.svg");
-}
-
-.icon.cloudy {
-  background-image: url("/images/cloudy.svg");
-}
-
-.icon.partly-cloudy-day {
-  background-image: url("/images/partly-cloudy-day.svg");
-}
-
-.icon.partly-cloudy-night {
-  background-image: url("/images/partly-cloudy-night.svg");
-}
-
-.icon.hail {
-  background-image: url("/images/hail.svg");
-}
-
-.icon.thunderstorm {
-  background-image: url("/images/thunderstorm.svg");
-}
-
-.icon.tornado {
-  background-image: url("/images/tornado.svg");
-}
 
 /**
  * Main body
@@ -429,12 +259,6 @@ body {
   position: relative;
 }
 
-.weather-card .remove-city {
-  background-color: transparent;
-  border: none;
-  float: right;
-  font-size: x-large;
-}
 
 .weather-card .location {
   font-size: 1.75em;
@@ -473,31 +297,10 @@ body {
   color: #666;
 }
 
-.weather-card .future {
-  display: flex;
-}
-
-.weather-card .future .oneday {
-  flex-grow: 1;
+.weather-card .titolo {
+  font-weight: 700;
   text-align: center;
 }
-
-.weather-card .future .oneday .icon {
-  height: 64px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 64px;
-}
-
-.weather-card .future .oneday .temp-high,
-.weather-card .future .oneday .temp-low {
-  display: inline-block;
-}
-
-.weather-card .future .oneday .temp-low {
-  color: #666;
-}
-
 /**
  * Media query to adjust size of content for small screens
  */

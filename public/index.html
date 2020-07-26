@@ -32,158 +32,77 @@
 <body>
 
   <header class="header">
-    <h1>La mia quantità PWA</h1>
+    <h1>La mia quantità</h1>
     <button id="butInstall" aria-label="Install" hidden></button>
-    <button id="butRefresh" aria-label="Refresh"></button>
   </header>
 
   <main class="main">
 
-    <div id="weather-template" class="weather-card" hidden>
-      <div class="card-spinner">
-        <svg viewBox="0 0 32 32" width="32" height="32">
-          <circle cx="16" cy="16" r="14" fill="none"></circle>
-        </svg>
-      </div>
-      <button class="remove-city">&times;</button>
-      <div class="city-key" hidden></div>
-      <div class="card-last-updated" hidden></div>
-      <div class="location">&nbsp;</div>
-      <div class="date">&nbsp;</div>
-      <div class="description">&nbsp;</div>
-      <div class="current">
-        <div class="visual">
-          <div class="icon"></div>
-          <div class="temperature">
-            <span class="value"></span><span class="scale">°C</span>
-          </div>
-        </div>
-        <div class="description">
-          <div class="humidity">
-            <span class="label">Umidit&agrave;:</span>
-            <span class="value"></span><span class="scale">%</span>
-          </div>
-          <div class="wind">
-            <span class="label">Vento:</span>
-            <span class="value"></span>
-            <span class="scale">mph</span>
-            <!-- <span class="direction"></span>° -->
-          </div>
-          <div class="sunrise">
-            <span class="label">Alba:</span>
-            <span class="value"></span>
-          </div>
-          <div class="sunset">
-              <span class="label">Tramon.:</span>
-              <span class="value"></span>
-          </div>
-          <div class="pressure">
-            <span class="label">Press:</span>
-            <span class="value"></span> hPa
-          </div>
-      </div>
-      </div>
-      <div class="future">
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-      </div>
+    <div class="weather-card">
+      <div class='titolo'>CRUDO</div>
+      <table>
+        <tr>
+          <td><div class="sunrise">Patty:</div></td>
+          <td><input id='edtPattyCrudo' type="number"></td>
+        </tr>
+        <tr>
+          <td><div class="sunset">Ste:</div></td>
+          <td><input id='edtSteCrudo' type="number"></td>
+        </tr>
+      </table>
     </div>
-  </main>
 
+    <div id="" class="weather-card">
+      <div class='titolo'>PESO COTTO TOTALE</div>
+      <div style='text-align: center;'><input type='number' id='edtPesoTotale'></div>
+    </div>
+
+    <div id="" class="weather-card">
+      <div class='titolo'>COTTO</div>
+      
+      <table>
+        <tr>
+          <td><div class="sunrise">Patty:</div></td>
+          <td><div id='pesoCottoPatty'></div></td>
+        </tr>
+        <tr>
+          <td><div class="sunset">Ste:</div></td>
+          <td><div id=pesoCottoSte></div></td>
+        </tr>
+      </table>
+    </div>
+
+    </main>
 
   <script src="/scripts/app.js"></script>
   <script src="/scripts/install.js"></script>
   
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script> 
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="/__/firebase/7.17.1/firebase-analytics.js"></script> -->
+
+<!-- Initialize Firebase -->
+<!-- <script src="/__/firebase/init.js"></script> -->
 
 <script>
   // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCjOnH0-P1j39X5PPA8JmowFv5VU2uex84",
-    authDomain: "myfirstpwa-37305.firebaseapp.com",
-    databaseURL: "https://myfirstpwa-37305.firebaseio.com",
-    projectId: "myfirstpwa-37305",
-    storageBucket: "myfirstpwa-37305.appspot.com",
-    messagingSenderId: "616214175028",
-    appId: "1:616214175028:web:f84dc36e6c7d742e"
-  };
+  const firebaseConfig = {
+  apiKey: "AIzaSyDH4_1lPYQNnwgtkBzjmxRNEFPyZkWStEE",
+  authDomain: "la-mia-quantita.firebaseapp.com",
+  databaseURL: "https://la-mia-quantita.firebaseio.com",
+  projectId: "la-mia-quantita",
+  storageBucket: "la-mia-quantita.appspot.com",
+  messagingSenderId: "692951692331",
+  appId: "1:692951692331:web:4240947f6021ce3d63666e",
+  measurementId: "G-C2NX8RRZ0D"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-</script>
 
-  <script>
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')

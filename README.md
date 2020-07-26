@@ -1,4 +1,4 @@
-# LaMiaquantità partendo da articolo Google:
+# LaMiaQuantità partendo da articolo Google:
 
 In this codelab, you'll  build a weather web app using Progressive Web App
 techniques. Your app will:
@@ -18,10 +18,6 @@ techniques. Your app will:
 * ho installato l'app sul cellulare puntando il browser sull'indirizzo web del hosting. L'app si è installata tra le applicazioni normali ed ha creato un'icona sul desktop.
 * Modificato il progetto ed eseguito il deploy
 * L'app si è aggiornata sul cellulare senza notifica
-* Testare se l'app funziona anche su un server HTTPS diverso da quello di Google - soprattutto per l'aggiornamento della app
-* Perchè non funziona se lanciato sul server di Google ? Perchè richiede la fetch in locale https://myfirstpwa-37305.web.app/forecast/40.7720232,-73.9732319 e non al server remoto (su PC lo esegue nodejs!!). 
-In ogni caso viene generato un errore 404 che non viene gestito correttamente ..
-
 
 
 ### Live server
