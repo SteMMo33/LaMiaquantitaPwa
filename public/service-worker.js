@@ -1,24 +1,9 @@
 /*
- * @license
- * Your First PWA Codelab (https://g.co/codelabs/pwa)
- * Copyright 2019 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License
  */
 'use strict';
 
 // CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v7';
+const CACHE_NAME = 'static-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v2';
 
 // CODELAB: Add list of files to cache here.
@@ -30,41 +15,9 @@ const FILES_TO_CACHE = [
   '/scripts/install.js',
   '/scripts/luxon.min.js',
   '/styles/inline.css',
-  '/images/add.svg',
-  '/images/clear-day.svg',
-  '/images/clear-night.svg',
-  '/images/cloudy.svg',
-  '/images/fog.svg',
-  '/images/hail.svg',
   '/images/install.svg',
-  '/images/partly-cloudy-day.svg',
-  '/images/partly-cloudy-night.svg',
-  '/images/rain.svg',
   '/images/refresh.svg',
-  '/images/sleet.svg',
-  '/images/snow.svg',
-  '/images/thunderstorm.svg',
-  '/images/tornado.svg',
-  '/images/wind.svg',
-  '/images/ow/01d.png',
-  '/images/ow/01n.png',
-  '/images/ow/02d.png',
-  '/images/ow/02n.png',
-  '/images/ow/03d.png',
-  '/images/ow/03n.png',
-  '/images/ow/04d.png',
-  '/images/ow/04n.png',
-  '/images/ow/09d.png',
-  '/images/ow/09n.png',
-  '/images/ow/10d.png',
-  '/images/ow/10n.png',
-  '/images/ow/11d.png',
-  '/images/ow/11n.png',
-  '/images/ow/13d.png',
-  '/images/ow/13n.png',
-  '/images/ow/50d.png',
-  '/images/ow/50n.png'
-];
+  ];
 
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');

@@ -1,19 +1,6 @@
 <!--
- OpenWeather First PWA Codelab (https://g.co/codelabs/pwa)
-
- Copyright 2019 Google Inc.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+  La mia quntità
+  Sviluppato per la Dadina - 26.07.2020
 -->
 
 <!DOCTYPE html>
@@ -22,8 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenWeather PWA</title>
-  <meta name="codelab" content="your-first-pwa-ow">
+  <title>La mia quantià PWA</title>
   <link rel="stylesheet" type="text/css" href="/styles/inline.css">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 
@@ -33,35 +19,25 @@
   <!-- CODELAB: Add iOS meta tags and icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <meta name="apple-mobile-web-app-title" content="LMQ PWA">
   <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
 
   <!-- CODELAB: Add description here -->
-  <meta name="description" content="My weather PWA">
+  <meta name="description" content="La mia quntità PWA">
 
   <!-- CODELAB: Add meta theme-color -->
-  <meta name="theme-color" content="#2F3BA2" />
+  <meta name="theme-color" content="#1010A2" />
 
 </head>
 <body>
 
   <header class="header">
-    <h1>
-      OpenWeatherMap PWA
-    </h1>
+    <h1>La mia quantità PWA</h1>
     <button id="butInstall" aria-label="Install" hidden></button>
     <button id="butRefresh" aria-label="Refresh"></button>
   </header>
 
   <main class="main">
-
-    <button id="butAdd" class="fab" aria-label="Add">
-      <span class="icon add"></span>
-    </button>
-
-    <div id="about" class="weather-card">
-      Locale: <span id="localName">&nbsp;</span>
-    </div>
 
     <div id="weather-template" class="weather-card" hidden>
       <div class="card-spinner">
@@ -182,37 +158,7 @@
     </div>
   </main>
 
-  <div id="addDialogContainer">
-    <div class="dialog">
-      <div class="dialog-title">Aggiungi luogo</div>
-      <div class="dialog-body">
-        <select id="selectCityToAdd" aria-label="City to add">
-          <!--
-            Values are lat/lon values, use Google Maps to find and add
-            additional cities.
-          -->
-          <option value="28.6472799,76.8130727">Dehli, India</option>
-          <option value="51.5287718,-0.2416815">London, UK</option>
-          <option value="40.6976701,-74.2598666">New York, USA</option>
-          <option value="48.8589507,2.2770202">Paris, France</option>
-          <option value="37.757815,-122.5076401">San Francisco, USA</option>
-          <option value="44.695333,10.241556">Felino, Italia</option>
-          <option value="43.654,-79.3873">Toronto, Canada</option>
-        </select>
-        <p>Latitud: <input id="inputLat" name="inputLat" type="number" step="0.00001"></p>
-        <p>Longit: <input id="inputLong" name="inputLong" type="number" step="0.00001"></p>
-		  <p>Nome: <input id="inputName" name="inputName"></p>
-		  <p id='inputDesc' name='inputDesc'></p>
-      </div>
-      <div class="dialog-buttons">
-        <button id="butDialogCancel" class="button">Annulla</button>
-        <button id="butDialogAdd" class="button">Aggiungi</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- <script src="/scripts/luxon-1.11.4.js"></script> -->
-  <script src="/scripts/luxon.min.js"></script><!-- Libreria per la gestione delle date -->
   <script src="/scripts/app.js"></script>
   <script src="/scripts/install.js"></script>
   
@@ -238,7 +184,6 @@
 </script>
 
   <script>
-    // CODELAB: Register service worker.
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
