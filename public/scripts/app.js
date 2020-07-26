@@ -55,6 +55,7 @@ function updateData() {
  * @param {Object} locations The list of locations to save.
  */
 function saveDefault(pesi) {
+  console.log("Save default: ", pesi)
   const data = JSON.stringify(pesi);
   localStorage.setItem('pesiDefault', data);
 }
@@ -68,11 +69,13 @@ function saveDefault(pesi) {
 function loadPesiDefault() {
   // Guarda in LocalStorage se ci sono posti salvati
   let pesiDefault = localStorage.getItem('pesiDefault');
+  console.log("ReadDefault: ", pesiDefault)
   if (pesiDefault) {
     try {
-      pesiCrudiDefault = JSON.parse(locations);
+      pesiDefault = JSON.parse(pesiDefault);
     } catch (ex) {
-      pesiCrudiDefault = { patty:100, ste:100};
+      console.error("JSON err: ")
+      pesiDefault = { patty:100, ste:100};
     }
   }
   // Dati di default se non trovati altri salvataggi in localStorage
@@ -86,12 +89,9 @@ function loadPesiDefault() {
 // Ricalcolo pesi dal totale cotto
 function changedPesoTotale(e){
   console.log("changed ..")
-  var nPesoCrudoSte = Number(document.querySelector('#edtSteCrudo').value)
+  let nPesoCrudoSte = Number(document.querySelector('#edtSteCrudo').value)
   let nPesoCrudoPatty = Number(document.querySelector('#edtPattyCrudo').value)
   let nPesoTotale = Number(document.querySelector('#edtPesoTotale').value)
-  console.log(nPesoCrudoSte)
-  console.log(nPesoCrudoPatty)
-  console.log(nPesoTotale)
 
   var ratio = nPesoCrudoPatty/nPesoCrudoSte
   let pesoPatty = ratio*nPesoTotale/(1+ratio)
@@ -112,6 +112,16 @@ function init() {
 
   // Set up the event handlers for all of the buttons.
   document.querySelector('#edtPesoTotale').oninput = changedPesoTotale
+  document.querySelector('#edtPattyCrudo').onchange = (e) => {
+    let nPeso = Number(document.querySelector('#edtPattyCrudo').value)
+    app.pesiCrudiDefault.patty = nPeso
+    saveDefault(app.pesiCrudiDefault)
+  }
+  document.querySelector('#edtSteCrudo').onchange = (e) => {
+    let nPeso = Number(document.querySelector('#edtSteCrudo').value)
+    app.pesiCrudiDefault.ste = nPeso
+    saveDefault(app.pesiCrudiDefault)
+  }
 }
 
 init();
