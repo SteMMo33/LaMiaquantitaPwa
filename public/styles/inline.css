@@ -131,19 +131,11 @@ body {
   }
 }
 
-/**
- * Icons
- */
-
-.icon {
-  background-repeat: no-repeat;
-  background-size: contain;
+.risultato {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
 }
-
-.icon.add {
-  background-image: url("/images/add.svg");
-}
-
 
 /**
  * Main body

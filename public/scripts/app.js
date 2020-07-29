@@ -94,8 +94,8 @@ function changedPesoTotale(e){
   let nPesoTotale = Number(document.querySelector('#edtPesoTotale').value)
 
   var ratio = nPesoCrudoPatty/nPesoCrudoSte
-  let pesoPatty = ratio*nPesoTotale/(1+ratio)
-  let pesoSte = nPesoTotale-pesoPatty
+  let pesoPatty = (ratio*nPesoTotale/(1+ratio)).toFixed(0)
+  let pesoSte = (nPesoTotale-pesoPatty).toFixed(0)
 
   document.querySelector('#pesoCottoPatty').textContent = pesoPatty
   document.querySelector('#pesoCottoSte').textContent = pesoSte
