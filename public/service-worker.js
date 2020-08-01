@@ -2,11 +2,11 @@
  */
 'use strict';
 
-// CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v3';
+// : Update cache names any time any of the cached files change.
+const CACHE_NAME = 'static-cache-v4';
 const DATA_CACHE_NAME = 'data-cache-v2';
 
-// CODELAB: Add list of files to cache here.
+// : Add list of files to cache here.
 const FILES_TO_CACHE = [
   // Se non abbiamo cache .. '/offline.html'
   '/',
@@ -15,15 +15,20 @@ const FILES_TO_CACHE = [
   '/scripts/install.js',
   '/styles/inline.css',
   '/images/install.svg',
+  '/images/favicon.ico',
   '/images/icons/icon-32x32.png',
   '/images/icons/icon-128x128.png',
-  '/images/icons/icon-256x256.png'
+  '/images/icons/icon-144x144.png',
+  '/images/icons/icon-152x152.png',
+  '/images/icons/icon-192x192.png',
+  '/images/icons/icon-256x256.png',
+  '/images/icons/icon-512x512.png',
   ];
 
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');
 
-  // CODELAB: Precache static resources here.
+  // : Precache static resources here.
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[ServiceWorker] Pre-caching offline page');
@@ -38,7 +43,7 @@ self.addEventListener('install', (evt) => {
 self.addEventListener('activate', (evt) => {
   console.log('[ServiceWorker] Activate');
 
-  // CODELAB: Remove previous cached data from disk.
+  // : Remove previous cached data from disk.
   evt.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
@@ -56,7 +61,7 @@ self.addEventListener('fetch', (evt) => {
   console.log('[ServiceWorker] Fetch ', evt.request.url);
   console.log('[ServiceWorker] Mode ', evt.request.mode);
 
-  // CODELAB: Add fetch event handler here.
+  // : Add fetch event handler here.
   /* Original code
   if (evt.request.mode !== 'navigate') {
     // Not a page navigation, bail.
