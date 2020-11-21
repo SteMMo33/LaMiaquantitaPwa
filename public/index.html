@@ -1,5 +1,5 @@
 <!--
-  La mia quntità
+  La mia quantità
   Sviluppato per la Dadina - 26.07.2020
 -->
 
@@ -13,19 +13,15 @@
   <link rel="stylesheet" type="text/css" href="/styles/inline.css">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 
-  <!-- CODELAB: Add link rel manifest -->
   <link rel="manifest" href="/manifest.json">
 
-  <!-- CODELAB: Add iOS meta tags and icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="LMQ PWA">
   <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
 
-  <!-- CODELAB: Add description here -->
   <meta name="description" content="La mia quantità PWA">
 
-  <!-- CODELAB: Add meta theme-color -->
   <meta name="theme-color" content="#1010A2" />
 
 </head>
@@ -45,11 +41,15 @@
       <table>
         <tr>
           <td style="width: 80px;"><div class="sunrise">Patty:</div></td>
-          <td><input id='edtPattyCrudo' type="number" style='text-align: center;font-size: 1.3em'></td>
+          <td><input id='edtPattyCrudo' type="number" style='text-align: center;font-size: 1.2em'></td>
         </tr>
         <tr>
           <td><div class="sunset">Ste:</div></td>
-          <td><input id='edtSteCrudo' type="number" style='text-align: center;font-size: 1.3em'></td>
+          <td><input id='edtSteCrudo' type="number" style='text-align: center;font-size: 1.2em'></td>
+        </tr>
+        <tr>
+          <td><div class="sunset">Totale:</div></td>
+          <td><div id='edtTotCrudo' style='text-align: center;font-size: 1.2em; border-radius: 5px;border: 1px blue solid;'></div></td>
         </tr>
       </table>
     </div>
@@ -66,11 +66,11 @@
       <table>
         <tr>
           <td><div class="sunrise">Patty:</div></td>
-          <td style='width: 100%;'><div id='pesoCottoPatty' class='risultato'></div></td>
+          <td style='width: 100%;'><div id='pesoCottoPatty' class='risultato'>-</div></td>
         </tr>
         <tr>
           <td><div class="sunset">Ste:</div></td>
-          <td><div id=pesoCottoSte class='risultato'></div></td>
+          <td><div id=pesoCottoSte class='risultato'>-</div></td>
         </tr>
       </table>
     </div>

@@ -13,39 +13,16 @@ const app = {
  * Toggles the visibility of the add location dialog box.
  */
 function toggleAddDialog() {
-  weatherApp.addDialogContainer.classList.toggle('visible');
+  app.addDialogContainer.classList.toggle('visible');
 }
 
-
-
-
-/**
- * Get's the HTML element for the weather forecast, or clones the template
- * and adds it to the DOM if we're adding a new item.
- *
- * @param {Object} location Location object
- * @return {Element} The element for the weather forecast.
- */
-function getForecastCard(location) {
-  const id = location.geo;
-  const card = document.getElementById(id);
-  if (card) {
-    return card;
-  }
-  const newCard = document.getElementById('weather-template').cloneNode(true);
-  newCard.querySelector('.location').textContent = location.label;
-  newCard.setAttribute('id', id);
-  newCard.querySelector('.remove-city').addEventListener('click', removeLocation);
-  document.querySelector('main').appendChild(newCard);
-  newCard.removeAttribute('hidden');
-  return newCard;
-}
 
 /**
  */
 function updateData() {
   document.querySelector("#edtPattyCrudo").value = (app.pesiCrudiDefault.patty)
   document.querySelector("#edtSteCrudo").value = (app.pesiCrudiDefault.ste)
+  document.querySelector("#edtTotCrudo").textContent = (app.pesiCrudiDefault.ste+app.pesiCrudiDefault.patty)
  }
 
 
@@ -116,11 +93,14 @@ function init() {
     let nPeso = Number(document.querySelector('#edtPattyCrudo').value)
     app.pesiCrudiDefault.patty = nPeso
     saveDefault(app.pesiCrudiDefault)
+    updateData()
   }
+
   document.querySelector('#edtSteCrudo').onchange = (e) => {
     let nPeso = Number(document.querySelector('#edtSteCrudo').value)
     app.pesiCrudiDefault.ste = nPeso
     saveDefault(app.pesiCrudiDefault)
+    updateData()
   }
 }
 

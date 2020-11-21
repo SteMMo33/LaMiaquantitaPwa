@@ -60,22 +60,6 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
   console.log('[ServiceWorker] Fetch ', evt.request.url);
   console.log('[ServiceWorker] Mode ', evt.request.mode);
-
-  // : Add fetch event handler here.
-  /* Original code
-  if (evt.request.mode !== 'navigate') {
-    // Not a page navigation, bail.
-    return;
-  }
-  evt.respondWith(
-      fetch(evt.request)
-          .catch(() => {
-            return caches.open(CACHE_NAME)
-                .then((cache) => {
-                  return cache.match('offline.html');
-                });
-          })
-  ); */
   
   //SM Nuova gestione con il recupero dei dati in cache
   // if (evt.request.url.includes('/forecast/')) 
